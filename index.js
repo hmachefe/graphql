@@ -58,6 +58,20 @@ const resolvers = {
                 ...args.game
             });
             return db.games;
+        },
+        updateGame(parent, args, context) {
+            console.log('1');
+            db.games = db.games.map((game) => {
+                if (game.id === args.id) {
+                    console.log('2');
+                    return {
+                        ...game,
+                        ...args.edits
+                    };
+                }
+                return game;
+            });
+            return db.games;
         }
     }
 }
