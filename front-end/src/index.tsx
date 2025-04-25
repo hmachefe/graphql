@@ -3,6 +3,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import App from './App';
 import './index.css';
 import { GRAPHQL_API_URL } from './config';
+import { BrowserRouter } from 'react-router-dom';
 
 const client = new ApolloClient({
   uri: GRAPHQL_API_URL,
@@ -15,6 +16,8 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <ApolloProvider client={client}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </ApolloProvider>
 );
