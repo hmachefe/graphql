@@ -15,5 +15,8 @@
     "gameUpdateFailed": "Failed to update game.",
     "loading": "Loading...",
     "errorLoadingGame": "Error loading game.",
-    "gameNotFound": "Game not found."
+    "gameNotFound": "Game not found.",
+    "title": "Title",
+    "enterTitle": "Enter game title",
+    "enterPlatforms": "Comma-separated (e.g., PC, Xbox)"
 }

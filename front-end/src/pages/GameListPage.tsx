@@ -19,10 +19,48 @@ export default function GameListPage() {
     i18n.changeLanguage(lng);
   };
 
-  const { loading, error, data } = useQuery<GamesData>(GET_GAMES);
-  const [deleteGame] = useMutation(DELETE_GAME, { /* ... same cache update code */ });
-  const [addGame] = useMutation(ADD_GAME, { /* ... */ });
-  const [updateGame] = useMutation(UPDATE_GAME, { /* ... */ });
+  const { loading, error, data } = useQuery<GamesData>(GET_GAMES);  
+  
+  const [deleteGame] = useMutation(DELETE_GAME);
+
+  const [addGame] = useMutation(ADD_GAME, {
+    update(cache, { data }) {
+      const newGame = data?.addGame;
+      if (!newGame) return;
+  
+      const existingGames = cache.readQuery<GamesData>({ query: GET_GAMES });
+  
+      if (existingGames?.games) {
+        cache.writeQuery({
+          query: GET_GAMES,
+          data: {
+            games: [...existingGames.games, newGame],
+          },
+        });
+      }
+    },
+  });
+  
+  const [updateGame] = useMutation(UPDATE_GAME, {
+    update(cache, { data }) {
+      const updatedGame = data?.updateGame;
+      if (!updatedGame) return;
+  
+      const existingGames = cache.readQuery<GamesData>({ query: GET_GAMES });
+  
+      if (existingGames?.games) {
+        cache.writeQuery({
+          query: GET_GAMES,
+          data: {
+            games: existingGames.games.map((game) =>
+              game.id === updatedGame.id ? { ...game, ...updatedGame } : game
+            ),
+          },
+        });
+      }
+    },
+  });
+  
 
   const handleAddGame = async (formData: GameFormInputs) => {
     try {
@@ -36,7 +74,21 @@ export default function GameListPage() {
 
   const handleDelete = async (id: string) => {
     try {
-      await deleteGame({ variables: { id } });
+      await deleteGame({
+        variables: { id },
+        update(cache) {
+          const existingGames = cache.readQuery<GamesData>({ query: GET_GAMES });
+  
+          if (existingGames?.games) {
+            cache.writeQuery({
+              query: GET_GAMES,
+              data: {
+                games: existingGames.games.filter((game) => game.id !== id),
+              },
+            });
+          }
+        },
+      });
       toast.success(t('gameDeleted'));
     } catch (error) {
       toast.error(t('gameDeleteFailed'));

@@ -15,5 +15,8 @@
     "gameUpdated": "Jeu mis à jour avec succès !",
     "gameUpdateFailed": "Échec de la mise à jour du jeu.",
     "errorLoadingGame": "Erreur lors du chargement du jeu.",
-    "gameNotFound": "Jeu non trouvé."
+    "gameNotFound": "Jeu non trouvé.",
+    "title": "Titre",
+    "enterTitle": "Entrez le titre du jeu",
+    "enterPlatforms": "Séparés par des virgules (ex: PC, Xbox)"
 }
