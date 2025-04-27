@@ -7,7 +7,7 @@ export default {
         port:     5432,
         database: 'graphql_example',
         user:     'graphql_user',
-        password: 'hugo',
+        password: 'hugo', // TEMP
       },
       migrations: { directory: './migrations', extension: 'js' },
       seeds:      { directory: './seeds',     extension: 'cjs' },
