@@ -1,0 +1,19 @@
+{
+    "welcome": "🎮 Bibliothèque de jeux",
+    "addGame": "➕ Ajouter un jeu",
+    "loading": "Chargement...",
+    "errorLoadingGames": "Erreur lors du chargement des jeux !",
+    "platforms": "Plateformes",
+    "reviews": "Avis",
+    "update": "✏️ Mettre à jour",
+    "delete": "🗑️ Supprimer",
+    "noGames": "Aucun jeu trouvé.",
+    "gameAdded": "Jeu ajouté avec succès !",
+    "gameAddFailed": "Échec de l'ajout du jeu.",
+    "gameDeleted": "Jeu supprimé avec succès !",
+    "gameDeleteFailed": "Échec de la suppression du jeu.",
+    "gameUpdated": "Jeu mis à jour avec succès !",
+    "gameUpdateFailed": "Échec de la mise à jour du jeu.",
+    "errorLoadingGame": "Erreur lors du chargement du jeu.",
+    "gameNotFound": "Jeu non trouvé."
+}

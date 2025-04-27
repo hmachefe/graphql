@@ -1,0 +1,19 @@
+{
+    "welcome": "🎮 Game Library",
+    "addGame": "➕ Add Game",
+    "errorLoadingGames": "Error loading games!",
+    "platforms": "Platforms",
+    "reviews": "Reviews",
+    "update": "✏️ Update",
+    "delete": "🗑️ Delete",
+    "noGames": "No games found.",
+    "gameAdded": "Game added successfully!",
+    "gameAddFailed": "Failed to add game.",
+    "gameDeleted": "Game deleted successfully!",
+    "gameDeleteFailed": "Failed to delete game.",
+    "gameUpdated": "Game updated successfully!",
+    "gameUpdateFailed": "Failed to update game.",
+    "loading": "Loading...",
+    "errorLoadingGame": "Error loading game.",
+    "gameNotFound": "Game not found."
+}
