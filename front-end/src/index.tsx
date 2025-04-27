@@ -5,6 +5,7 @@ import './index.css';
 import { GRAPHQL_API_URL } from './config';
 import { BrowserRouter } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import './i18n';
 
 const client = new ApolloClient({
   uri: GRAPHQL_API_URL,
