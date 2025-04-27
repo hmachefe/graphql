@@ -4,6 +4,7 @@ import { GET_GAMES, DELETE_GAME, ADD_GAME, UPDATE_GAME } from '../graphql';
 import { Game } from '../types';
 import GameForm, { GameFormInputs } from '../components/GameForm';
 import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 interface GamesData {
   games: Game[];
@@ -21,14 +22,32 @@ export default function GameListPage() {
     refetchQueries: [{ query: GET_GAMES }],
   });
 
-  const handleAddGame = (formData: GameFormInputs) => {
-    const platforms = formData.platform.split(',').map((p) => p.trim());
-    addGame({ variables: { game: { title: formData.title, platform: platforms } } });
+  const handleAddGame = async (formData: GameFormInputs) => {
+    try {
+      const platforms = formData.platform.split(',').map((p) => p.trim());
+      await addGame({ variables: { game: { title: formData.title, platform: platforms } } });
+      toast.success('Game added successfully!');
+    } catch (error) {
+      toast.error('Failed to add game.');
+    }
   };
 
-  const handleDelete = (id: string) => deleteGame({ variables: { id } });
-  const handleUpdate = (id: string) => {
-    updateGame({ variables: { id, edits: { title: 'Updated Game Title' } } });
+  const handleDelete = async (id: string) => {
+    try {
+      await deleteGame({ variables: { id } });
+      toast.success('Game deleted successfully!');
+    } catch (error) {
+      toast.error('Failed to delete game.');
+    }
+  };
+  
+  const handleUpdate = async (id: string) => {
+    try {
+      await updateGame({ variables: { id, edits: { title: 'Updated Game Title' } } });
+      toast.success('Game updated successfully!');
+    } catch (error) {
+      toast.error('Failed to update game.');
+    }
   };
 
   if (loading) return <p>Loading...</p>;
