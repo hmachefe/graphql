@@ -93,8 +93,9 @@ npm start
 
 ## 🔗 Links
 
-- 🎥 Demo Video: `/demo.mp4`  
-- 📄 License: MIT  
+- 🎥 [Watch the demo](./demo.mp4)
+- 📄 [MIT License](./LICENSE)
+
 
 ---
 
