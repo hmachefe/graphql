@@ -95,6 +95,8 @@ npm start
 
 - 🎥 [Watch the demo](./demo.gif)
 
+![Demo GIF](./demo.gif)
+
 <video controls width="100%">
   <source src="./demo.mp4" type="video/mp4" />
   Your browser doesn’t support embedded video.
