@@ -93,7 +93,7 @@ npm start
 
 ## 🔗 Links
 
-- 🎥 [Watch the demo](./demo.mp4)
+- 🎥 [Watch the demo](./demo.gif)
 
 <video controls width="100%">
   <source src="./demo.mp4" type="video/mp4" />
