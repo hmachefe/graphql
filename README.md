@@ -94,7 +94,14 @@ npm start
 ## 🔗 Links
 
 - 🎥 [Watch the demo](./demo.mp4)
+
+<video controls width="100%">
+  <source src="./demo.mp4" type="video/mp4" />
+  Your browser doesn’t support embedded video.
+</video>
+
 - 📄 [MIT License](./LICENSE)
+
 
 
 ---
